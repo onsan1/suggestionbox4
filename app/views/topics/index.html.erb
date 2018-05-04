@@ -1,0 +1,23 @@
+<h1>Listing Topics</h1>
+<p>Ruby飯</p>
+<table>
+	<tr>
+		<th>食</th>
+	</tr>
+	<tr>
+		<th>飲</th>
+	</tr>
+     <% @topics.each do|topic| %> 
+	<tr>
+		<td><%= topic.title %></td>
+		<td><%= topic.description %></td>
+		<td>
+			<%= link_to "been","topics/" %>
+			<%= link_to "never","#" %>
+		</td>
+
+
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'New Topic', new_topic_path %>

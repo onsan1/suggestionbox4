@@ -1,0 +1,31 @@
+<h1>Edit topic</h1>
+<%=  form_for(@topic) do |f| %>
+ 
+ <% if @topic.errors.any? %>
+  <div id = "error_explanation">
+  	<h2>
+  		<%= pluralize(@topic.errors.count, error) %>prohibited
+  		this topic from being saved:
+  	</h2>
+  	<ul><%= msg %>
+  	<% end %>
+    </ul>
+  </div>
+ <% end %>
+
+
+ <p>
+ 	<%= f.label :title %><br>
+ 	<%= f.text_fild :title %>
+ </p>
+ <p>
+ 	<%= f.label :description %><br>
+ 	<%= f.text_area :description %>
+ </p>
+ <p>
+ 	<%= f.submit %>
+ </p>
+
+<% end %>
+
+<%= link_to 'Back' , topics_path %>

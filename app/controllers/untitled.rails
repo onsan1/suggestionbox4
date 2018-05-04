@@ -1,0 +1,11 @@
+<td>
+			<%= pluralize(topic.votes.count,"vote") %>
+		　</td>
+		  <td>
+		   <%=  button_to '+1', upvote_path(topic.id), method: :post %>
+		  </td>
+		  <td>
+			  <% if topic.votes.any? %>
+			  <%= button_to '-1', downvote_path(topic.id), method: :delete %>
+			  <%  end %>
+		　</td>
